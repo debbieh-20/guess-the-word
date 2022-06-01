@@ -1,6 +1,10 @@
 //create global variables
 const guessedLettersElement = document.querySelector(".guessed-letters");  //unordered list
+
 const guessLetterButton = document.querySelector(".guess");  //button with the text Guess in it
+
+const buttonLetterGuess = document.querySelector(".guess");  //button with the text Guess in it
+
 const letterInput = document.querySelector(".letter");  //text input where the player will guess a letter
 const wordInProgress = document.querySelector(".word-in-progress");  //empty paragraph where the word in progress appears
 const remainingGuessesElement = document.querySelector(".remaining");  // paragraph where the remaining guesses will display
@@ -69,3 +73,13 @@ const makeGuess = function (guess) {
   console.log(guessedLetters);
   }
 };
+
+buttonLetterGuess.addEventListener("click", function (e) {
+    //prevents reloading behavior
+    e.preventDefault();
+    //capture the value of the input
+    const guess = letterInput.value;
+    console.log(guess);
+    letterInput.value = "";
+});
+
